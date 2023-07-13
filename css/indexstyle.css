@@ -1,0 +1,55 @@
+body{
+	margin: auto;
+	background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url("../img/img-palawan.jpg");
+}
+.half1{
+	float: left;
+	width: 50%;
+	height: 100vh;
+}
+.half2{
+	float: left;
+	width: 50%;
+	height: 100vh;
+	display: flex;
+}
+.logo img{
+	display: block;
+	margin: auto;
+	width: 100%;
+}
+.inputmodule{
+	margin: auto;
+	width: 450px;
+	height: 500px;
+	background-color: white;
+	border-radius: 10px;
+}
+.loginbtn{
+	font-family: "Century Gothic";
+	width: 50%;
+	float: left;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+	border-top-left-radius: 10px;
+}
+.frmfont{
+	font-family: "Century Gothic";
+	font-weight: bold;
+}
+.signupbtn{
+	font-family: "Century Gothic";
+	width: 50%;
+	float: left;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+	border-top-right-radius: 10px;
+}
+.loginbtn:hover, .signupbtn:hover{
+	cursor: pointer;
+	background-color: #f1f1f1;
+}
