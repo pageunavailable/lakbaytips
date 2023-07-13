@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width" initial-scale ="1.0">
 		<title>Lakbay Tips</title>
 		<link rel="stylesheet" type="text/css" href="../css/indexstyle.css">
+		<script type="text/javascript " src="../js/landingtab_toggle.js"></script>
 	</head>
 	<body>
 		<div class = "half1">
@@ -18,12 +19,12 @@
 		<div class = "half2">
 			<div class = "inputmodule">
 				<div class = "tabs">
-					<div class = "loginbtn">
+					<button class = "loginbtn" onclick="LoginToggle()">
 						Log In
-					</div>
-					<div class = "signupbtn">
+					</button>
+					<button class = "signupbtn" onclick="SignUpToggle()">
 						Sign Up
-					</div>
+					</button>
 				</div>
 					<div class = "login">
 						<form class = "lgnform" method = "POST">

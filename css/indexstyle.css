@@ -26,30 +26,41 @@ body{
 	border-radius: 10px;
 }
 .loginbtn{
+	background-color: white;
 	font-family: "Century Gothic";
 	width: 50%;
 	float: left;
 	text-align: center;
 	padding-top: 10px;
 	padding-bottom: 10px;
-
+	border: none;
 	border-top-left-radius: 10px;
 }
-.frmfont{
-	font-family: "Century Gothic";
-	font-weight: bold;
-}
 .signupbtn{
+	background-color: white;
 	font-family: "Century Gothic";
 	width: 50%;
 	float: left;
 	text-align: center;
 	padding-top: 10px;
 	padding-bottom: 10px;
-
+	border: none;
 	border-top-right-radius: 10px;
 }
 .loginbtn:hover, .signupbtn:hover{
 	cursor: pointer;
 	background-color: #f1f1f1;
+}
+.frmfont{
+	font-family: "Century Gothic";
+	font-weight: bold;
+}
+.login{
+	display:block;
+	padding: 30px;
+}
+
+.signup{
+	display:block;
+	padding: 30px;
 }

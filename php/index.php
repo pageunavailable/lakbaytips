@@ -12,6 +12,6 @@
     }
 
 
-    $test = "../html/landing_page.php";
-    include($test);
+    $landing = "../html/landing_page.php";
+    include($landing);
 ?>
