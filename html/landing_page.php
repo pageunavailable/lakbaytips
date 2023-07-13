@@ -19,10 +19,10 @@
 		<div class = "half2">
 			<div class = "inputmodule">
 				<div class = "tabs">
-					<button class = "loginbtn" onclick="test()">
+					<button class = "loginbtn" onclick="loginToggle()">
 						Log In
 					</button>
-					<button class = "signupbtn" onclick="SignUpToggle()">
+					<button class = "signupbtn" onclick="signupToggle()">
 						Sign Up
 					</button>
 				</div>

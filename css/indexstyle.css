@@ -1,6 +1,8 @@
 body{
 	margin: auto;
 	background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url("../img/img-palawan.jpg");
+	background-repeat: no-repeat;
+	background-size: auto;
 }
 .half1{
 	float: left;
@@ -61,6 +63,6 @@ body{
 }
 
 .signup{
-	display:block;
+	display:none;
 	padding: 30px;
 }
