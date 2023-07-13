@@ -10,7 +10,7 @@
 	<body>
 		<div class = "half1">
 			<div class = "logo">
-				<img src="../img/logo.png">
+				<img src="../img/Lakbay_Tips_2.0 logo.png">
 			</div>
 			<div class = "desc">
 				<p></p>
@@ -19,14 +19,14 @@
 		<div class = "half2">
 			<div class = "inputmodule">
 				<div class = "tabs">
-					<button class = "loginbtn" onclick="LoginToggle()">
+					<button class = "loginbtn" onclick="test()">
 						Log In
 					</button>
 					<button class = "signupbtn" onclick="SignUpToggle()">
 						Sign Up
 					</button>
 				</div>
-					<div class = "login">
+					<div class = "login" id = "lgn">
 						<form class = "lgnform" method = "POST">
 							<p class="frmfont">Log In</p>
 							<input type = "text" placeholder="Username">
@@ -34,7 +34,7 @@
 							<input type = "submit" value = "Log In">
 						</form>
 					</div>
-					<div class = "signup">
+					<div class = "signup" id = "sgn">
 						<form class = "sgnform" method = "POST">
 							<p class="frmfont">Sign Up</p>
 							<input type = "text" placeholder="First Name">

@@ -1,3 +1,4 @@
-function LoginToggle(){
-    document.getElementsByClassName('signup').style.display = "none";
+
+function test(){
+    document.getElementsByClassName("loginbtn").style.backgroundColor = "red";
 }
