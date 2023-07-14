@@ -25,7 +25,7 @@
 			echo '<script>alert("This username has been taken! Please choose another.")<script>';
 		}
 		else{
-			echo '<script>alert("You are good to go.")<script>';
+			echo '<script>alert("Username available!")<script>';
 		}
 	}
 
