@@ -2,7 +2,8 @@ body{
 	margin: auto;
 	background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url("../img/img-palawan.jpg");
 	background-repeat: no-repeat;
-	background-size: auto;
+	background-position: center;
+	background-size: cover;
 }
 .half1{
 	float: left;
@@ -27,9 +28,12 @@ body{
 	background-color: white;
 	border-radius: 10px;
 }
-.loginbtn{
-	background-color: white;
+#loginbtn{
+	background-color: #79a6cc;
+	color: white;
 	font-family: "Century Gothic";
+	font-size: "30px";
+	font-weight: bold;
 	width: 50%;
 	float: left;
 	text-align: center;
@@ -38,9 +42,11 @@ body{
 	border: none;
 	border-top-left-radius: 10px;
 }
-.signupbtn{
+#signupbtn{
 	background-color: white;
 	font-family: "Century Gothic";
+	font-size: "30px";
+	font-weight: bold;
 	width: 50%;
 	float: left;
 	text-align: center;
@@ -49,9 +55,10 @@ body{
 	border: none;
 	border-top-right-radius: 10px;
 }
-.loginbtn:hover, .signupbtn:hover{
+#loginbtn:hover, #signupbtn:hover{
 	cursor: pointer;
-	background-color: #f1f1f1;
+	background-color: #6990af !important;
+	color: white !important;
 }
 .frmfont{
 	font-family: "Century Gothic";

@@ -19,19 +19,21 @@
 		<div class = "half2">
 			<div class = "inputmodule">
 				<div class = "tabs">
-					<button class = "loginbtn" onclick="loginToggle()">
+					<button id = "loginbtn" onclick="loginToggle()">
 						Log In
 					</button>
-					<button class = "signupbtn" onclick="signupToggle()">
+					<button id = "signupbtn" onclick="signupToggle()">
 						Sign Up
 					</button>
 				</div>
 					<div class = "login" id = "lgn">
 						<form class = "lgnform" method = "POST">
 							<p class="frmfont">Log In</p>
-							<input type = "text" placeholder="Username">
-							<input type = "password" placeholder="Password">
-							<input type = "submit" value = "Log In">
+							<input id = "usrlgn_txt" type = "text" placeholder="Username" name = "lgn_usr">
+							<br>
+							<input id = "pswlgn_txt" type = "password" placeholder="Password" name = "lgn_psw">
+							<br>
+							<input type = "submit" value = "Log In" name = "Login">
 						</form>
 					</div>
 					<div class = "signup" id = "sgn">
