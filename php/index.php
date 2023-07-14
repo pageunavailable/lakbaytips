@@ -1,23 +1,14 @@
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
+    $db_name = "lt_db";
+    $db_server = "localhost";
+    $db_user = "root";
+    $db_pass = "";
 
-    // Create connection
-    $conn = mysqli_connect($servername, $username, $password);
-
-    // Check connection
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
+    $db = new PDO("mysql:host={$db_server};dbname={$db_name};charset=utf8", $db_user, $db_pass);
+	$db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+	$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
     $landing = "../html/landing_page.php";
     include($landing);
-    if(isset($_POST['Login'])){
-        $lgn_user = $_POST['lgn_usr'];
-        $lgn_pass = $_POST['lgn_psw'];
-        $password = hash("sha256",$lgn_pass);
-        
-    }
 ?>
