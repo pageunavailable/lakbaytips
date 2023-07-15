@@ -74,10 +74,11 @@ body{
 	display:none;
 	padding: 30px;
 }
-#error{
+.error{
 	color: red;
 }
-#verify{
+.verify{
 	color: green;
 }
+
 

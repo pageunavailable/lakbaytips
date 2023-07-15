@@ -17,16 +17,27 @@
     }
 
 	if(isset($_POST['Signup'])){
-		$stmt = $db->prepare("SELECT * FROM lt_acc_usrnm WHERE lt_acc_usrnm = ?");
-		$stmt->execute([$sgn_usr]);
-		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		$sgn_usr = $_POST['sgn_usr'];
+		$sgn_eml = $_POST['sgn_eml'];
+		$sgn_pass = $_POST['sgn_psw'];
+		$sgn_conf_pass = $_POST['sgn_conf_psw'];
+		$cond_ctr = 0;
+		//if(strlen($sgn_usr) > 7){
+			$stmt = $db->prepare("SELECT * FROM lt_usr_acc WHERE lt_acc_usrnm = ?");
+			$stmt->execute([$sgn_usr]);
+			$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-		if($result){
-			echo '<script>alert("This username has been taken! Please choose another.")<script>';
-		}
+			if($result){
+				echo '<script>alert("This username has been taken! Please choose another.")</script>';
+			}
+			else{
+				echo '<script>alert("Username available!")</script>';
+
+			}
+		/*}
 		else{
-			echo '<script>alert("Username available!")<script>';
-		}
+			$cond_ctr++;
+		}*/
 	}
 
 ?>
@@ -73,26 +84,32 @@
 						</form>
 					</div>
 					<div class = "signup" id = "sgn">
-						<form class = "sgnform" method = "POST" action="" onsubmit="onSubmit()">
+						<form class = "sgnform" method = "POST" action="">
 							<p class="frmfont">Sign Up</p>
 							<input type = "text" placeholder="First Name" name = "fname"required>
 							<input type = "text" placeholder="Last Name" name = "lname" required>
 							<br>
 							<input type = "text" placeholder="Username" name = "sgn_usr"required>
 							<br>
+							<span class = "error" id = "usrcharerror">* Must be 8 Characters Long</span>
+							<br>
+							<span class = "error" id = "">* Username already taken</span>
+							<br>
+							<span class = "verify" id = "">* Username available</span>
+							<br>
 							<input type = "email" placeholder="E-mail" name = "sgn_eml" required>
 							<br>
 							<input type = "password" placeholder="Password" name = "sgn_psw" required> 
 							<br>
-							<span id = "error">* Must be 8 Characters Long</span>
+							<span class = "error" id = "pswcharerror">* Must be 8 Characters Long</span>
 							<br>
-							<span id = "error">* Must contain number</span>
+							<span class = "error">* Must contain number</span>
 							<br>
-							<input type = "password" placeholder="Confirm Password">
+							<input type = "password" placeholder="Confirm Password" name = "sgn_conf_psw" required>
 							<br>
-							<span id = "error">* Password does not match</span>
+							<span class = "error">* Password does not match</span>
 							<br>
-							<span id = "verify">* Password matched</span>
+							<span class = "verify">* Password matched</span>
 							<br>
 							<input type = "submit" value="Sign Up" name = "Signup">
 						</form>
