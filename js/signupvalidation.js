@@ -1,8 +1,6 @@
 $(document).ready(function(){
     $("#namereq").css("display", "none");
     $("#usrcharerror").css("display", "none");
-    $("#usrunv").css("display", "none");
-    $("#usrave").css("display", "none");
     $("#valeml").css("display", "none");
     $("#pswcharerror").css("display", "none");
     $("#pswnumreq").css("display", "none");
@@ -29,10 +27,11 @@ $(document).ready(function(){
     }
     document.getElementById('sgnconfpsw').addEventListener('input', AutoChecker);
     document.getElementById("sgnconfpsw").addEventListener("keyup", AutoChecker);
+
 });
 
 
-
+condmet = 0;
 function onSubmit(){
     condmet = 0;
     clear = false;
@@ -80,47 +79,19 @@ function onSubmit(){
     if($('#sgnpsw').val() == ""){
         $("#pswnullerror").css("display", "block");
     }
-    else if($('#sgnpsw').val() == $('#sgnconfpsw').val() && ($('#sgnconfpsw').val() != "" && $('#sgnpsw').val() != "")){
-        condmet++;
-    }
-    if($('#sgnpsw').val().length < 8 && $('#sgnpsw').val().length > 0){
+    else if($('#sgnpsw').val().length < 8 && $('#sgnpsw').val().length > 0){
         $("#pswcharerror").css("display", "block");
         $("#pswnullerror").css("display", "none");
     }
+    else if($('#sgnpsw').val() == $('#sgnconfpsw').val() && ($('#sgnconfpsw').val().length > 7)){
+        condmet++;
+    }
+
     else{
         $("#pswcharerror").css("display", "none");
     }
-
-    $('#test').text(condmet);
-    //if(condmet < 4){
+    if(condmet < 4){
         event.preventDefault();
-    //}
-    $.ajax({
-        url: "../php/chkUsr.php",
-        type: "POST",
-        data: {
-                "username": $('#sgnusr').val()
-            },
-        success: function(response){
-            var id;
-            response.forEach(function(acc, index){
-                id = acc.lt_acc_id;
-            });
-            if(id > 0){
-                alert("Account Taken!");
-                $('#usrunv').css("display", "block;");
-
-            }
-            else{
-                //console.log("Account Free");
-                $('.usrunv').css("display", "none;");
-                
-                
-                
-            }
-        }
-        
-
-    });
+    }
 
 }

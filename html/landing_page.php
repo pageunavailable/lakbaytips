@@ -17,9 +17,12 @@
     }
 
 	if(isset($_POST['Signup'])){
-		/*$sgn_usr = $_POST['sgn_usr'];
+		$sgn_fname = $_POST['fname'];
+		$sgn_lname = $_POST['lname'];
+		$sgn_usr = $_POST['sgn_usr'];
 		$sgn_eml = $_POST['sgn_eml'];
 		$sgn_pass = $_POST['sgn_psw'];
+		$sgn_psw_hash = hash("sha256",$sgn_pass);
 		$sgn_conf_pass = $_POST['sgn_conf_psw'];
 		$cond_ctr = 0;
 		if(strlen($sgn_usr) > 7){
@@ -27,19 +30,24 @@
 			$stmt->execute([$sgn_usr]);
 			$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+			$stmt2 = $db->prepare("SELECT * FROM lt_usr_acc WHERE lt_acc_eml = ?");
+			$stmt2->execute([$sgn_eml]);
+			$result2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+
 			if($result){
-				echo '<script>alert("This username has been taken! Please choose another.")</script>';
-				echo '<script>document.getElementById("usrunv").style.display = "block"</script>';
-				echo '<script>document.getElementById("usrave").style.display = "none"</script>';
+				echo '<script>alert("This Username has been taken! Please choose another.")</script>';
+			}
+			else if($result2){
+				echo '<script>alert("This Email has been taken! Please choose another.")</script>';
 			}
 			else{
-				echo '<script>alert("Username available!")</script>';
-				echo '<script>document.getElementById("usrunv").style.display = "none"</script>';
-				echo '<script>document.getElementById("usrave").style.display = "block"</script>';
+				$stmt = $db->prepare("INSERT INTO lt_usr_acc (lt_acc_usrnm, lt_acc_psw, lt_acc_eml, lt_acc_fn, lt_acc_ln) VALUES(?,?,?,?,?)");
+				$result = $stmt->execute([$sgn_usr, $sgn_psw_hash, $sgn_eml, $sgn_fname, $sgn_lname]);
+				echo '<script>alert("Account Registered!")</script>';
 			}
 		}
 		else{
-		}*/
+		}
 	}
 
 ?>
@@ -89,7 +97,7 @@
 						</form>
 					</div>
 					<div class = "signup" id = "sgn">
-						<form class = "sgnform" method = "POST" action="" onsubmit = "onSubmit()">
+						<form class = "sgnform" method = "POST" action="" onsubmit = "onSubmit()" novalidate>
 							<p class="frmfont">Sign Up</p>
 							<input type = "text" id = "sgnfname"placeholder="First Name" name = "fname">
 							<input type = "text" id = "sgnlname"placeholder="Last Name" name = "lname" >
@@ -100,8 +108,6 @@
 
 							<span class = "error" id = "usrnullerror">* Required</span>
 							<span class = "error" id = "usrcharerror">* Must be 8 Characters Long</span>
-							<span class = "error" id = "usrunv">* Username already taken</span>
-							<span class = "verify" id = "usrave">* Username available</span>
 							<br>
 							<input type = "email" id = "sgneml"placeholder="E-mail" name = "sgn_eml" >
 
@@ -118,8 +124,7 @@
 							<span class = "error" id = "pswnmtch">* Password does not match</span>
 							<span class = "verify" id = "pswmtch">* Password matched</span>
 							<br>
-							<input type = "submit" value="Sign Up" name = "Signup">
-							<span id = "test">Test</span>
+							<input type = "submit" id = "submitbtn" value="Sign Up" name = "Signup">
 						</form>
 					</div>
 				</div>
