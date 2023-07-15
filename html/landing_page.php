@@ -66,13 +66,24 @@
 							<p class="frmfont">Sign Up</p>
 							<input type = "text" placeholder="First Name" name = "fname"required>
 							<input type = "text" placeholder="Last Name" name = "lname" required>
+							<br>
 							<input type = "text" placeholder="Username" name = "sgn_usr"required>
+							<br>
 							<input type = "email" placeholder="E-mail" name = "sgn_eml" required>
+							<br>
 							<input type = "password" placeholder="Password" name = "sgn_psw" required> 
+							<br>
 							<span id = "error">* Must be 8 Characters Long</span>
+							<br>
 							<span id = "error">* Must contain number</span>
+							<br>
 							<input type = "password" placeholder="Confirm Password">
-							<input type = "submit" value="Sign Up">
+							<br>
+							<span id = "error">* Password does not match</span>
+							<br>
+							<span id = "verify">* Password matched</span>
+							<br>
+							<input type = "submit" value="Sign Up" name = "Signup">
 						</form>
 					</div>
 				</div>
