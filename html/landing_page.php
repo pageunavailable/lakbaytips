@@ -17,26 +17,28 @@
     }
 
 	if(isset($_POST['Signup'])){
-		$sgn_usr = $_POST['sgn_usr'];
+		/*$sgn_usr = $_POST['sgn_usr'];
 		$sgn_eml = $_POST['sgn_eml'];
 		$sgn_pass = $_POST['sgn_psw'];
 		$sgn_conf_pass = $_POST['sgn_conf_psw'];
 		$cond_ctr = 0;
-		//if(strlen($sgn_usr) > 7){
+		if(strlen($sgn_usr) > 7){
 			$stmt = $db->prepare("SELECT * FROM lt_usr_acc WHERE lt_acc_usrnm = ?");
 			$stmt->execute([$sgn_usr]);
 			$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 			if($result){
 				echo '<script>alert("This username has been taken! Please choose another.")</script>';
+				echo '<script>document.getElementById("usrunv").style.display = "block"</script>';
+				echo '<script>document.getElementById("usrave").style.display = "none"</script>';
 			}
 			else{
 				echo '<script>alert("Username available!")</script>';
-
+				echo '<script>document.getElementById("usrunv").style.display = "none"</script>';
+				echo '<script>document.getElementById("usrave").style.display = "block"</script>';
 			}
-		/*}
+		}
 		else{
-			$cond_ctr++;
 		}*/
 	}
 
@@ -51,8 +53,11 @@
 		<meta name="viewport" content="width=device-width" initial-scale ="1.0">
 		<title>Lakbay Tips</title>
 		<link rel="stylesheet" type="text/css" href="../css/indexstyle.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 		<script type="text/javascript " src="../js/landingtab_toggle.js"></script>
-		<script type="text/javascript " src="../js/preventdefault.js"></script>
+		<script type="text/javascript " src="../js/signupvalidation.js"></script>
+		
+
 	</head>
 	<body>
 		<div class = "half1">
@@ -84,34 +89,37 @@
 						</form>
 					</div>
 					<div class = "signup" id = "sgn">
-						<form class = "sgnform" method = "POST" action="">
+						<form class = "sgnform" method = "POST" action="" onsubmit = "onSubmit()">
 							<p class="frmfont">Sign Up</p>
-							<input type = "text" placeholder="First Name" name = "fname"required>
-							<input type = "text" placeholder="Last Name" name = "lname" required>
+							<input type = "text" id = "sgnfname"placeholder="First Name" name = "fname">
+							<input type = "text" id = "sgnlname"placeholder="Last Name" name = "lname" >
+
+							<span class = "error" id = "namereq">* Please Enter Full Name</span>
 							<br>
-							<input type = "text" placeholder="Username" name = "sgn_usr"required>
-							<br>
+							<input type = "text" id = "sgnusr" placeholder="Username" name = "sgn_usr">
+
+							<span class = "error" id = "usrnullerror">* Required</span>
 							<span class = "error" id = "usrcharerror">* Must be 8 Characters Long</span>
+							<span class = "error" id = "usrunv">* Username already taken</span>
+							<span class = "verify" id = "usrave">* Username available</span>
 							<br>
-							<span class = "error" id = "">* Username already taken</span>
-							<br>
-							<span class = "verify" id = "">* Username available</span>
-							<br>
-							<input type = "email" placeholder="E-mail" name = "sgn_eml" required>
-							<br>
-							<input type = "password" placeholder="Password" name = "sgn_psw" required> 
-							<br>
+							<input type = "email" id = "sgneml"placeholder="E-mail" name = "sgn_eml" >
+
+							<span class = "error" id = "valeml">* Valid Email Required</span>
+							<br>	
+							<input type = "password" id = "sgnpsw" placeholder="Password" name = "sgn_psw" > 
+
+							<span class = "error" id = "pswnullerror">* Required</span>
 							<span class = "error" id = "pswcharerror">* Must be 8 Characters Long</span>
+							<span class = "error" id = "pswnumreq">* Must contain number</span>
 							<br>
-							<span class = "error">* Must contain number</span>
-							<br>
-							<input type = "password" placeholder="Confirm Password" name = "sgn_conf_psw" required>
-							<br>
-							<span class = "error">* Password does not match</span>
-							<br>
-							<span class = "verify">* Password matched</span>
+							<input type = "password" id = "sgnconfpsw" placeholder="Confirm Password" name = "sgn_conf_psw" >
+
+							<span class = "error" id = "pswnmtch">* Password does not match</span>
+							<span class = "verify" id = "pswmtch">* Password matched</span>
 							<br>
 							<input type = "submit" value="Sign Up" name = "Signup">
+							<span id = "test">Test</span>
 						</form>
 					</div>
 				</div>
