@@ -1,21 +1,31 @@
-<!DOCTPYE html>
-<html>
- <head>
-    <meta charset = "UTF-8">
-    <meta charset name = "viewport" content = "width=device-width, initial-scale-1.0">
-    <title>Lakbay Tips Admin</title>
+<!DOCTYPE html>
+<html lang= "en" dir="ltr">
+<head>
+        <title>
+            Administrator
+        </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        <link rel="stylesheet" href="../css/adminstyle.css">
+</head>
 
-    <!-- css file link -->
-    <link rel="stylesheet" type="text/css" href="../css/adminstyle.css">
-
- </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <h3>hi, <span>admin</span></h3>
-                <h1>welcome <span></span></h1>
-                <p>admin user only</p>
+<body class="container">
+    <div class="center">
+      <h1>Admin login</h1>
+        <form method = "post">
+            <div class="txt_field">
+                <input type ="text" required></input>
+                <span></span>
+                <label>Username</label>
             </div>
-        </div>
-    </body>
+            <div class="txt_field">
+                <input type ="text" required></input>
+                <span></span>
+                <label>Password</label>
+            </div>
+                <input type = "submit" value = "login"></input>
+        </form>
+    </div>
+</body>
+
 </html>
