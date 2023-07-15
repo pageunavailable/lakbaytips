@@ -1,5 +1,4 @@
 <?php
-
 	if(isset($_POST['Login'])){
         $lgn_user = $_POST['lgn_usr'];
         $lgn_pass = $_POST['lgn_psw'];
@@ -9,8 +8,6 @@
 	    $stmt->execute([$lgn_user, $password]);
 	    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);    
         
-        
-        
 	    if($result){
             echo '<script>alert("Account Found!")</script>';
         }
@@ -18,6 +15,20 @@
             echo '<script>alert("Invalid Account!")</script>';
         }
     }
+
+	if(isset($_POST['Signup'])){
+		$stmt = $db->prepare("SELECT * FROM lt_acc_usrnm WHERE lt_acc_usrnm = ?");
+		$stmt->execute([$sgn_usr]);
+		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+		if($result){
+			echo '<script>alert("This username has been taken! Please choose another.")<script>';
+		}
+		else{
+			echo '<script>alert("Username available!")<script>';
+		}
+	}
+
 ?>
 
 

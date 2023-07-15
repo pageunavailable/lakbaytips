@@ -1,0 +1,31 @@
+body
+{
+    background-color: #E9DAC1;
+}
+.pfpCircle 
+{ 
+    width : 150px;
+    height: 150px;
+    border-radius: 50%; 
+    background-color: gray;
+    overflow : hidden;
+}
+.profilebox
+{
+    height: 600px;
+    width : 75%;
+    background-color: #9ED2C6;
+    border-radius: 25px;
+    border: 5px solid;
+    border-color: #54BAB9;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+}
+img
+{
+    width: 100%;
+    height: 100%;
+}
