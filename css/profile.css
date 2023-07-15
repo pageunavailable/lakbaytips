@@ -1,31 +1,69 @@
 body
 {
-    background-color: #E9DAC1;
+    background-color: #F7ECDE;
+    margin:0;
+    width:100%;
+    
+    
 }
 .pfpCircle 
-{ 
-    width : 150px;
-    height: 150px;
+{   
+    
+    width : 15%;
+    aspect-ratio:1/1;
     border-radius: 50%; 
     background-color: gray;
     overflow : hidden;
+    margin:auto;
+
 }
 .profilebox
 {
-    height: 600px;
-    width : 75%;
+    display:block;
+    height: 55vh;
+    width : 65vw;
     background-color: #9ED2C6;
-    border-radius: 25px;
-    border: 5px solid;
+    border-width: 10px;
+    border-style:inset;
     border-color: #54BAB9;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:25px;
     padding: 10px;
+    position:relative;
+    
+   
+}
+.profilebox2
+{
+    display:block;
+    height: 55vh;
+    width : 65vw;
+    background-color: #9ED2C6;
+    border-width: 10px;
+    border-style:outset;
+    border-color: #54BAB9;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:.2px;
+    margin-bottom:25px;
+    padding: 10px;
+    
+   
 }
 img
 {
+    
     width: 100%;
     height: 100%;
+}
+.btn
+{
+    position:absolute;
+    bottom:0;
+    right:0;
+    width:5%;
+    height:5%;
+    
+    background-color:#F7ECDE;
 }

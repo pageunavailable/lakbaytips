@@ -7,6 +7,10 @@
 			    <div class = "pfpCircle">
                     <img src="../img/StockProfile.png">
                 </div>
+                <button class= "btn" button type = "submit">Edit</button>
+            </div>
+            <div class = "profilebox2">
+                
             </div>
      </body>
 </html>
