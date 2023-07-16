@@ -85,6 +85,8 @@ function onSubmit(){
         $("#pswnullerror").css("display", "none");
     }
     else if($('#sgnpsw').val() == $('#sgnconfpsw').val() && ($('#sgnconfpsw').val().length > 7)){
+        $("#pswcharerror").css("display", "none");
+        $("#pswnullerror").css("display", "none");
         condmet++;
     }
 

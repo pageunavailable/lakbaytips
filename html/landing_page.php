@@ -67,7 +67,6 @@
 
 							<span class = "error" id = "pswnmtch">* Password does not match</span>
 							<span class = "verify" id = "pswmtch">* Password matched</span>
-							
 							<input type = "submit" id = "submitbtn" value="Sign Up" name = "Signup">
 						</form>
 					</div>

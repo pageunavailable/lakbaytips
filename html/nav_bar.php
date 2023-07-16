@@ -1,3 +1,18 @@
+<?php
+    session_start();
+    if(isset($_POST['lgout'])){
+        session_unset();
+        session_destroy();
+        header("Location: index.php");
+    }
+    if(isset($_SESSION['accid'])){
+	}
+    else{
+		header("Location: index.php");
+	}
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -11,14 +26,25 @@
         <div class = "nav-container">
             <div class = "nav-logo">
                 <div class = "logo-border">
-                    <img src="../img/Lakbay_Tips_2.0 logo_big.png">
+                    <a href = "home.php"><img src="../img/Lakbay_Tips_2.0 logo_big.png"></a>
                 </div>
             </div>
             <div class = "nav-list">
                 <ul>
-                    <li>Home</li>
-                    <li>Travel</li>
-                    <li>Profile</li>
+
+                    <li><a href = "home.php" class = "nav-btn">Home</a></li>
+                    <li><a href = "travel.php" class = "nav-btn">Travel</a></li>
+                    <li>
+                        <div class = "dropdown">
+                            <a href = "" class = "nav-btn">Account</a>
+                            <div class = drp-content>
+                                <a href = "">PROFILE</a>
+                                <form method="POST">
+                                    <input type = "submit" value = "LOG OUT" name = "lgout">
+                                </form>
+                            </div>
+                        </div>
+                    </li>
                     
                 </ul>
             </div>

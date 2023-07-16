@@ -1,6 +1,9 @@
 <?php
-    include('db_connect.php');
-
+	session_start();
+	include('db_connect.php');
+	if(isset($_SESSION['accid'])){
+		header("Location: home.php");
+	}
 
     $landing = "../html/landing_page.php";
     include($landing);
@@ -10,11 +13,13 @@
         $lgn_pass = $_POST['lgn_psw'];
         $password = hash("sha256",$lgn_pass);
 
-        $stmt = $db->prepare("SELECT * FROM lt_usr_acc WHERE lt_acc_usrnm = ? AND lt_acc_psw = ?");
+        $stmt = $db->prepare("SELECT lt_acc_id FROM lt_usr_acc WHERE lt_acc_usrnm = ? AND lt_acc_psw = ?");
 	    $stmt->execute([$lgn_user, $password]);
-	    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);    
-        
+		$result = $stmt->fetch();  
+        $col = $result['lt_acc_id'];
 	    if($result){
+			echo "<script>alert($col)</script>";  
+			$_SESSION['accid'] = $col;
 			header("Location: home.php");
         }
         else{
