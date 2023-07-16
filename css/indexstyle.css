@@ -1,5 +1,7 @@
 body{
-	margin: auto;
+	margin: 0;
+	width: 100%;
+	height: 100vh;
 	background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url("../img/img-palawan.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
@@ -9,6 +11,8 @@ body{
 	float: left;
 	width: 50%;
 	height: 100vh;
+	display: flex;
+
 }
 .half2{
 	float: left;
@@ -16,15 +20,24 @@ body{
 	height: 100vh;
 	display: flex;
 }
+.logo{
+	width: 100%;
+	display: block;
+	margin: auto;
+}
 .logo img{
 	display: block;
 	margin: auto;
-	width: 100%;
+	width: 55%;
+	height: auto;
+	background-color: none;
+	filter: drop-shadow(-5px 5px 10px #222);
 }
 .inputmodule{
+	display: block;
 	margin: auto;
-	width: 450px;
-	height: 500px;
+	width: 500px;
+	height: 550px;
 	background-color: white;
 	border-radius: 10px;
 	box-shadow: rgb(12, 12, 12) 0px 5px 10px;
@@ -60,6 +73,9 @@ body{
 	cursor: pointer;
 	background-color: #6990af !important;
 	color: white !important;
+}
+input{
+	display: block;
 }
 .frmfont{
 	font-family: "Century Gothic";

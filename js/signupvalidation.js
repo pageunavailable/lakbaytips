@@ -78,6 +78,7 @@ function onSubmit(){
 
     if($('#sgnpsw').val() == ""){
         $("#pswnullerror").css("display", "block");
+        $("#pswcharerror").css("display", "none");
     }
     else if($('#sgnpsw').val().length < 8 && $('#sgnpsw').val().length > 0){
         $("#pswcharerror").css("display", "block");
