@@ -1,4 +1,12 @@
-
+body{
+    margin: 0px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
 .navcontainer{
     top:0;
     left:0;
@@ -80,6 +88,7 @@ li{
 }
 .navbtn:hover{
     background-color: #418f8e;
+    color: white;
 }
 .drpcontent{
     display: none;

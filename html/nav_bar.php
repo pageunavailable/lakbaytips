@@ -22,7 +22,7 @@
 		<link rel="stylesheet" type="text/css" href="../css/navstyle.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     </head>
-    <body class = "navbody">
+    <body>
         <div class = "navcontainer">
             <div class = "navlogo">
                 <div class = "logoborder">
