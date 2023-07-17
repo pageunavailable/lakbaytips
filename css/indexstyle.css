@@ -2,7 +2,7 @@ body{
 	margin: 0;
 	width: 100%;
 	height: 100vh;
-	background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url("../img/img-palawan.jpg");
+	background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url("../assets/img/img-palawan.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;

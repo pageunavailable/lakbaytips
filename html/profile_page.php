@@ -64,14 +64,16 @@ $listing = ["../assets/img/img-palawan.jpg", "../assets/img/Lakbay_Tips_2.0 logo
           <img src="<?= $imageSrc ?>" alt="">
         </div>
         <div class="profile-name-uname">
-          <span class="text"><?= $user['lt_acc_usrnm'] ?> </span>
-          <span class="sub-text">Name: <?= $user['lt_acc_fn'] ?> <?= $user['lt_acc_ln'] ?></span>
+          
+          <span class="sub-text"><span> <img src='../assets/icons/user-card-id-svgrepo-com.svg' alt=""> </span> <?= $user['lt_acc_fn'] ?> <?= $user['lt_acc_ln'] ?></span>
+          <span class="text"><p>@<?= $user['lt_acc_usrnm'] ?> </p></span>
+          
         </div>
 
         <div class="profile-info-container">
           <div class="profile-info">
             <Row>
-              <span> <img src='../assets/icons/person-2-svgrepo-com.svg' alt=""> </span>
+              <span> <img src='../assets/icons/yr-svgrepo-com.svg' alt=""> </span>
               <span>
                 <p>Age: <?= $user['lt_acc_age'] ?> </p>
               </span>

@@ -72,6 +72,7 @@ body {
   border-radius: 50%;
   width: 100%;
   height: 100%;
+  
 }
 
 .profile-card-container .profile-name-uname {
@@ -84,20 +85,23 @@ body {
 }
 
 .profile-name-uname .text {
-  font-size: 42px;
-  color: black;
+  font-size: 30px;
+  color:#666666;
   font-family: "Century Gothic";
+  
 }
 
 .profile-name-uname .sub-text {
-  font-size: 20px;
-  color: gray;
+  font-size: 42px;
+  color: black;
+  font-family: "Century Gothic";
+  font-weight:bold;
 }
 
 .profile-card-container .profile-info-container {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
   justify-content: center;
   align-items: center;
   width: 100;
@@ -106,15 +110,21 @@ body {
 .profile-info-container .profile-info {
   display: flex;
   flex-direction: row;
-  gap: 14px;
+  gap: 420px;
   justify-content: flex-start;
   align-items: center;
   width: 100%;
+  font-family: "Century Gothic";
+  font-size: 20px;
 }
 
 .profile-info-container img {
-  width: 25px;
-  height: 25px;
+  width: 40px;
+  height: 40px;
+}
+.profile-name-uname img {
+  width: 55px;
+  height: 55px;
 }
 
 .profile-info p {
