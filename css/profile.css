@@ -1,5 +1,5 @@
 body {
-  margin: 24px;
+  margin: 0px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -20,6 +20,7 @@ body {
   border-style: inset;
   border-color: #54bab9;
   margin: auto 25px;
+  margin-top: 90px;
   padding: 10px;
   position: relative;
 }
@@ -85,7 +86,7 @@ body {
 .profile-name-uname .text {
   font-size: 42px;
   color: black;
-  font-family: "tite";
+  font-family: "Century Gothic";
 }
 
 .profile-name-uname .sub-text {

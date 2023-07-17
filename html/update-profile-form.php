@@ -1,8 +1,8 @@
 <?php
-
+session_start();
 require '../php/db_connect.php';
+$id = $_SESSION['accid'];
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $id = $_POST['id'];
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
     $email = $_POST['email'];
@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                      lt_acc_ln  = :lastname,
                                      lt_acc_age = :age,
                                      lt_acc_cp = :mobile,
-                                     lt_acc_bdate = :birthdate,
+                                     lt_acc_bdate = :birthdate
                                      WHERE lt_acc_id = :id");
         $statement->bindParam(':firstname', $first_name);
         $statement->bindParam(':lastname', $last_name);
@@ -38,5 +38,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-header("location: ../html/profile.php");
+header("Location: ../php/profile.php");
 ?>

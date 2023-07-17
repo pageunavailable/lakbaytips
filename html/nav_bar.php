@@ -22,23 +22,23 @@
 		<link rel="stylesheet" type="text/css" href="../css/navstyle.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     </head>
-    <body>
-        <div class = "nav-container">
-            <div class = "nav-logo">
-                <div class = "logo-border">
-                    <a href = "home.php"><img src="../img/Lakbay_Tips_2.0 logo_big.png"></a>
+    <body class = "navbody">
+        <div class = "navcontainer">
+            <div class = "navlogo">
+                <div class = "logoborder">
+                    <a href = "home.php"><img src="../assets/img/Lakbay_Tips_2.0 logo_big.png" class = "navimg"></a>
                 </div>
             </div>
-            <div class = "nav-list">
+            <div class = "navlist">
                 <ul>
 
-                    <li><a href = "home.php" class = "nav-btn">Home</a></li>
-                    <li><a href = "travel.php" class = "nav-btn">Travel</a></li>
+                    <li><a href = "home.php" class = "navbtn">Home</a></li>
+                    <li><a href = "travel.php" class = "navbtn">Travel</a></li>
                     <li>
                         <div class = "dropdown">
-                            <a href = "" class = "nav-btn">Account</a>
-                            <div class = drp-content>
-                                <a href = "">PROFILE</a>
+                            <a href = "profile.php" class = "navbtn">Account</a>
+                            <div class = drpcontent>
+                                <a href = "profile.php">PROFILE</a>
                                 <form method="POST">
                                     <input type = "submit" value = "LOG OUT" name = "lgout">
                                 </form>

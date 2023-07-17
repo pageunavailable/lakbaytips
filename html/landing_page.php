@@ -14,7 +14,7 @@
 	<body>
 		<div class = "half1">
 			<div class = "logo">
-				<img src="../img/Lakbay_Tips_2.0 logo_big.png">
+				<img src="../assets/img/Lakbay_Tips_2.0 logo_big.png">
 			</div>
 			<div class = "desc">
 				<p></p>

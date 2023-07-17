@@ -1,6 +1,6 @@
 <?php
 require '../php/db_connect.php';
-
+$accid = $_SESSION['accid'];
 #User
 $statement = $db->prepare("SELECT lt_acc_id,
                                   lt_acc_usrnm,
@@ -11,8 +11,8 @@ $statement = $db->prepare("SELECT lt_acc_id,
                                   lt_acc_bdate,
                                   lt_acc_cp,
                                   lt_acc_pfp
-                                  FROM lt_usr_acc");
-$statement->execute();
+                                  FROM lt_usr_acc WHERE lt_acc_id = ?");
+$statement->execute([$accid]);
 #->fetch means fetch only one. Will not return array but instead entity
 $user = $statement->fetch(PDO::FETCH_ASSOC);
 
@@ -111,7 +111,7 @@ $listing = ["../assets/img/img-palawan.jpg", "../assets/img/Lakbay_Tips_2.0 logo
               <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="update-profile-form.php" method="POST" enctype="multipart/form-data">
+            <form action="../html/update-profile-form.php" method="POST" enctype="multipart/form-data">
               <div class="modal-body">
                 <div class="form-group">
                   <label for="first_name">First Name</label>
@@ -137,7 +137,6 @@ $listing = ["../assets/img/img-palawan.jpg", "../assets/img/Lakbay_Tips_2.0 logo
                   <label for="first_name">Birth Day</label>
                   <input type="date" name="birthdate" value="<?= $user['lt_acc_bdate'] ?>">
                 </div>
-                <input type="hidden" name="id" value="<?= $user['lt_acc_id'] ?>">
               </div>
               <div class="modal-footer">
                 <button type="button" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
