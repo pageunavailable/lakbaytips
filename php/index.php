@@ -18,7 +18,6 @@
 		$result = $stmt->fetch();  
         $col = $result['lt_acc_id'];
 	    if($result){
-			echo "<script>alert($col)</script>";  
 			$_SESSION['accid'] = $col;
 			header("Location: home.php");
         }
