@@ -10,8 +10,13 @@
     </head>
     <body class = "travelbody">
         <div class = "maincontainer">
-            <div>
-                
+            <div class = "center">
+                <span class = "trvlttl">Travel</span>
+
+                <span class = "trvldesc">Lorem Ipsum</span>
+                <div class = "travellist">
+                    
+                </div>
             </div>
         </div>
     </body>

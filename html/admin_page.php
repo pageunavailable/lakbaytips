@@ -1,3 +1,6 @@
+<?php
+?>
+
 <!DOCTYPE html>
 <html lang= "en" dir="ltr">
 <head>
@@ -11,19 +14,19 @@
 
 <body class="container">
     <div class="center">
-      <h1>Admin login</h1>
-        <form method = "post">
+      <h1 class = "formtitle">Admin</h1>
+        <form method = "POST">
             <div class="txt_field">
-                <input type ="text" required></input>
+                <input type ="text" name = "adm_usr" required></input>
                 <span></span>
                 <label>Username</label>
             </div>
             <div class="txt_field">
-                <input type ="text" required></input>
+                <input type ="password" name = "adm_psw" required></input>
                 <span></span>
                 <label>Password</label>
             </div>
-                <input type = "submit" value = "login"></input>
+                <input type = "submit" value = "login" name = "adm_sbt"></input>
         </form>
     </div>
 </body>
