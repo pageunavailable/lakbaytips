@@ -3,7 +3,7 @@ require '../php/db_connect.php';
 #User
 $statement = $db->prepare("SELECT * FROM lt_usr_acc");
 $statement->execute();
-$result = $statement->fetchAll(PDO::FETCH_ASSOC);
+//$result = $statement->fetch(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 
@@ -26,14 +26,16 @@ $result = $statement->fetchAll(PDO::FETCH_ASSOC);
                                 <td>ID</td>
                                  <td>Name</td>
                              </tr>
-                             <tr>
+                             
                                 <?php
-                                    while($row=mysqli_fetch_assoc($result)) 
+                                    while($result = $statement->fetch(PDO::FETCH_ASSOC)) 
                                     {
-                                 ?> 
-                                    <td><?php echo$row['lt_acc_id'];?></td>    
-                            </tr>
-                                 <?php
+                                ?> 
+                                <tr>
+                                <td><?=$result['lt_acc_id']?></td>
+                                <td><?=$result['lt_acc_fn'] . " " . $result['lt_acc_ln']?></td>        
+                                </tr>
+                                <?php
                                     }
                                 ?>
                              

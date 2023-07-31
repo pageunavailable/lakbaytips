@@ -1,6 +1,6 @@
 <?php
     include('db_connect.php');
-    $adm_lgn = "../html/admin_page.php";
+    $adm_lgn = "../html/admin_login.php";
     include($adm_lgn);
 
     if(isset($_POST['adm_sbt'])){
