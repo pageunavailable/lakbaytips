@@ -8,14 +8,14 @@
         $lgn_pass = $_POST['adm_psw'];
         $password = hash("sha256",$lgn_pass);
 
-        $stmt = $db->prepare("SELECT lt_admin_id FROM lt_admin_acc WHERE lt_acc_usr = ? AND lt_acc_psw = ?");
+        $stmt = $db->prepare("SELECT lt_admin_id FROM lt_admin_acc WHERE lt_admin_usr = ? AND lt_admin_psw = ?");
 	    $stmt->execute([$lgn_user, $password]);
 		$result = $stmt->fetch();  
-        $col = $result['lt_acc_id'];
+        $col = $result['lt_admin_id'];
 	    if($result){
 			echo "<script>alert($col)</script>";  
 			$_SESSION['accid'] = $col;
-			header("Location: home.php");
+			header("Location: admin_dashboard.php");
         }
         else{
             echo '<script>alert("Invalid Account!")</script>';
