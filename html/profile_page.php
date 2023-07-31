@@ -110,7 +110,7 @@ $listing = ["../assets/img/img-palawan.jpg", "../assets/img/Lakbay_Tips_2.0 logo
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Update your profile</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="../html/update-profile-form.php" method="POST" enctype="multipart/form-data">
