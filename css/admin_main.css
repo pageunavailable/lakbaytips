@@ -7,12 +7,32 @@ body
     height: 100vh;
     width: 100%;
     background-color: #F7ECDE;
-    display:relative;
+    display:flex;
     
 }
-.main-container .acc-container
+.tabmodule{
+  width: 70%;
+  margin: auto;
+  
+}
+.shadowoutline{
+  filter: drop-shadow(0px 5px 5px #666);
+}
+.pagelabel{
+  margin-bottom: 100px;
+  display: block;
+  font-family: "Century Gothic";
+  font-weight: bold;
+  font-size: 60px;
+  color: rgb(32, 32, 32);
+}
+.acc-container
 {
-    position:absolute;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius:10px;
+  height: 50vh;
+    /*position:absolute;
     bottom:200px;
     left:50%;
     -webkit-transform: translateX(-50%);
@@ -21,14 +41,34 @@ body
     box-shadow:black 0px 0px 8px;
     height: 55vh;
     width: 55vw;
-    background-color: #ffffff;
-    border-radius:30px;
+    border-radius:30px;*/
 
 }
 
-/* Style the tab */
+.usertab, .admintab{
+
+  border: none;
+  background: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 140px;
+  height: 40px;
+  font-family: "Century Gothic";
+
+}
+.usertab{
+  margin-left: 40px;
+}
+.admintab{
+  background-color: #bbbbbb;
+}
+.admintab:hover{
+  background: white;
+}
+
+/* Style the tab
 .usertab {
-    overflow: hidden;
+    /*overflow: hidden;
     border: 1px solid #ccc;
     background-color: #f1f1f1;
     width:6%;
@@ -49,12 +89,12 @@ body
     font-size: 17px;
   }
   
-  /* Change background color of buttons on hover */
+  Change background color of buttons on hover
   .usertab:hover {
     background-color: #ddd;
   }
   
-  /* Create an active/current tablink class */
+  Create an active/current tablink class 
   .usertab.active {
     background-color: #ccc;
   }
@@ -80,10 +120,10 @@ body
     font-size: 17px;
   }
   
-  /* Change background color of buttons on hover */
+  Change background color of buttons on hover
   .admintab:hover {
     background-color: #ddd;
-  }
+  }*/
   
   /* Create an active/current tablink class */
   .admintab.active {

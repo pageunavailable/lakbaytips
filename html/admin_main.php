@@ -14,41 +14,43 @@ $statement->execute();
 
 <body>
     <div class = "main-container">
-        <div>
-            <button class="usertab" onclick= >Users</button>
-            <button class="admintab" onclick= >Admin</button>
-        </div>
-            <div class = "acc-container">
-                 <div class = "user-content">
-                     <div class="card-body">
-                        <table class="table table-bordered">
-                             <tr>
-                                <td>ID</td>
-                                 <td>Name</td>
-                             </tr>
-                             
+        <div class = "tabmodule">
+            <span class = "pagelabel">Accounts</span>
+            <div class = "shadowoutline">
+                <div>
+                    <button class="usertab" onclick= >Users</button>
+                    <button class="admintab" onclick= >Admin</button>
+                </div>
+                <div class = "acc-container">
+                    <div class = "user-content">
+                        <div class="card-body">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td>ID</td>
+                                    <td>Name</td>
+                                </tr>
                                 <?php
                                     while($result = $statement->fetch(PDO::FETCH_ASSOC)) 
                                     {
                                 ?> 
                                 <tr>
-                                <td><?=$result['lt_acc_id']?></td>
-                                <td><?=$result['lt_acc_fn'] . " " . $result['lt_acc_ln']?></td>        
+                                    <td><?=$result['lt_acc_id']?></td>
+                                    <td><?=$result['lt_acc_fn'] . " " . $result['lt_acc_ln']?></td>        
                                 </tr>
                                 <?php
                                     }
                                 ?>
-                             
-                        </table>
-                        TEST
-                       </div>
-                 </div> 
-                <div class = "admin-content">
-                    
+                                    
+                            </table>
+                        </div>
+                    </div> 
+                    <div class = "admin-content">
+                            
+                    </div>
                 </div>
             </div>
+        </div>
     </div>
-    
 </body>
 
 </html>
